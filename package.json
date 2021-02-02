@@ -2,10 +2,10 @@
   "name": "e-com-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,13 @@
   },
   "homepage": "https://github.com/Open-RCA/eCom-nodejs-backend-2#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.11.14"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
