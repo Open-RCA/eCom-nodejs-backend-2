@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/Open-RCA/eCom-nodejs-backend-2#readme",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "joi-objectid": "^3.0.1",
     "mongoose": "^5.11.14"
   },
   "prettier": {
