@@ -1,13 +1,13 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
 
-const connectedDB = async () => {
-  const connection = await mongoose.connect(process.env.MONGDB_URI, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  })
-  console.log(`Db is connected at: ${connection.connection.host}`)
-}
+const connectDB = async() =>{
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true
+    });
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+};
 
-module.exports = connectedDB
+module.exports = connectDB;
