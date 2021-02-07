@@ -1,8 +1,8 @@
 {
-  "name": "e-com-backend",
+  "name": "ecom-nodejs-backend-2",
   "version": "1.0.0",
   "description": "",
-  "main": "server",
+  "main": "server.js",
   "scripts": {
     "start": "node server",
     "dev": "nodemon server"
@@ -11,7 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/Open-RCA/eCom-nodejs-backend-2.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {

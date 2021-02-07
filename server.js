@@ -11,12 +11,8 @@ const connectDB = require('./config/db');
 dotenv.config({ path: './config/config.env' });
 
 connectDB();
-const connectedDB = require("./config/db")
-const PORT = 3000
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
-
-connectedDB()
 
 app.use(cookieParser())
 app.use(express.json())
@@ -29,7 +25,6 @@ const cart = require('./routes/cart');
 app.use("/api", product, cart);
 
 const order = require("./routes/Order.route")
-const product = require("./routes/product")
 const categories = require("./routes/categories")
 const User = require("./routes/User")
 
