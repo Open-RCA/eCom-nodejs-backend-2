@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "joi": "^17.3.0",
     "joi-objectid": "^3.0.1",
+    "joi-oid": "^1.1.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.14",
     "morgan": "^1.10.0"
