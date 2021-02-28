@@ -9,3 +9,11 @@ exports.addOrder = async(req, res) =>{
         res.status(500).send()
     }
 }
+
+exports.cancelOrder = async (req, res) =>{
+    try {
+        
+    } catch (error) {
+        
+    }
+}

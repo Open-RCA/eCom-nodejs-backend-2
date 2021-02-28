@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use("/api", product, cart)
+// app.use("/api", product, cart)
 
 const order = require("./routes/Order.route")
 const categories = require("./routes/categories")
