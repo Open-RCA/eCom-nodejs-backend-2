@@ -39,6 +39,29 @@ exports.addOrder = async(req, res) =>{
     }
 }
 
+exports.getOrderById = (req,res)=> {
+    Order.findById(req.params.id).populate("customer_id")
+    .then(async(doc)=> {
+        let details = await OrderDetails.findOne({order_id: doc._id})
+        return res.send({order: doc, details: details})
+    })
+}
+
+exports.getAllOrders = (req,res)=> {
+    Order.find({}).populate("customer_id")
+    .then(async(docs)=> {
+        let results = []
+        for(let i=0; i<docs.length; i++){
+            let details = await OrderDetails.findOne({order_id: docs[i]._id})
+            results.push({
+                order: docs[i],
+                details: details
+            })
+        }
+        return res.send(results)
+    })
+}
+
 //getting an order->egide
 //getting all orders->egide
 //change order status->mike
