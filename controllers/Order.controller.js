@@ -39,8 +39,40 @@ exports.addOrder = async(req, res) =>{
     }
 }
 
+exports.changeOrderStatus = async(req, res) =>{
+    try {
+        const update = {status: req.body.status}
+        const order = {order_id: req.params.id}
+        if(!order) return res.status(404).send()
+        const updateOrder = await OrderDetails.findOneAndUpdate(order,update,{new: true})       
+        res.status(200).send(updateOrder)
+    } catch (error) {
+        res.status(500).send()
+    }
+}
+
+exports.deleteOrder = async(req, res) =>{
+    try {
+        const order = {order_id: req.params.id, status: 'new'}
+        let deleteOrder = await OrderDetails.findOneAndDelete(order)
+        if(!deleteOrder) return res.status(404).send()
+        deleteOrder = await Order.findOneAndDelete({_id: req.params.id})
+        res.send(deleteOrder)
+
+    } catch (error) {
+        
+    }
+}
+
+exports.ordersByStatus = async(req, res) =>{
+    try {
+        const orders = await Order.find({status: req.params.status})
+        res.send(orders)
+    } catch (error) {
+        res.status(500).send()
+    }
+}
+
 //getting an order->egide
 //getting all orders->egide
-//change order status->mike
-//deletinga order (when status == new)->mike
 //getting orders by status 
